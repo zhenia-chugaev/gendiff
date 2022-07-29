@@ -2,6 +2,7 @@
   "name": "@hexlet/code",
   "version": "0.1.0",
   "description": "",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/zhenia-chugaev/gendiff/issues"
   },
-  "homepage": "https://github.com/zhenia-chugaev/gendiff#readme"
+  "homepage": "https://github.com/zhenia-chugaev/gendiff#readme",
+  "dependencies": {
+    "commander": "^9.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.20.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
 }
