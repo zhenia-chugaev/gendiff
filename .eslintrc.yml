@@ -6,7 +6,10 @@ extends:
 parserOptions:
   ecmaVersion: latest
   sourceType: module
-rules: {}
+rules:
+  import/extensions:
+    - error
+    - ignorePackages
 overrides:
   - rules:
       no-console: off
