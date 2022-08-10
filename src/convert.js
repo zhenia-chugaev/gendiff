@@ -22,5 +22,5 @@ export default (keySpecs) => {
     .map((line) => line.padStart(line.length + SPACES_COUNT, ' '))
     .join('\n');
 
-  return `{\n${inner}\n}`;
+  return !inner ? '{}' : `{\n${inner}\n}`;
 };
