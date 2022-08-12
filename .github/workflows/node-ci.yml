@@ -1,0 +1,17 @@
+name: node CI
+on: push
+jobs:
+  code-check:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: repo cloning
+        uses: actions/checkout@v3
+      - name: deps installation
+        run: npm ci
+      - name: lint'n'test
+        run: |
+          make lint
+          make test
