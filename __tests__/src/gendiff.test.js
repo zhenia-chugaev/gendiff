@@ -5,18 +5,22 @@ import { process } from '../../src/gendiff.js';
 
 let json1;
 let json2;
+let json3;
 let yaml1;
 let yaml2;
+let yaml3;
 
 let result1;
 let result2;
 let result3;
 
 beforeAll(() => {
-  json1 = readFixture('file1.json');
-  json2 = readFixture('file2.json');
-  yaml1 = readFixture('file1.yml');
-  yaml2 = readFixture('file2.yaml');
+  json1 = { content: readFixture('file1.json'), extension: '.json' };
+  json2 = { content: readFixture('file2.json'), extension: '.json' };
+  json3 = { content: '{}', extension: '.json' };
+  yaml1 = { content: readFixture('file1.yml'), extension: '.yml' };
+  yaml2 = { content: readFixture('file2.yaml'), extension: '.yaml' };
+  yaml3 = { content: '', extension: '.yml' };
 
   result1 = readFixture('result1');
   result2 = readFixture('result2');
@@ -28,7 +32,7 @@ describe('json files testing', () => {
     expect(process(json1, json2)).toBe(result1);
     expect(process(json2, json2)).toBe(result2);
     expect(process(json2, json1)).toBe(result3);
-    expect(process('{}', '{}')).toBe('{}');
+    expect(process(json3, json3)).toBe('{}');
   });
 });
 
@@ -37,6 +41,6 @@ describe('yaml files testing', () => {
     expect(process(yaml1, yaml2)).toBe(result1);
     expect(process(yaml2, yaml2)).toBe(result2);
     expect(process(yaml2, yaml1)).toBe(result3);
-    expect(process('', '')).toBe('{}');
+    expect(process(yaml3, yaml3)).toBe('{}');
   });
 });
