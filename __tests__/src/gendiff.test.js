@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import readFixture from '../../src/fixture.js';
-import { process } from '../../src/gendiff.js';
+import process from '../../src/process.js';
 
 let json1;
 let json2;
