@@ -1,6 +1,9 @@
 import _ from 'lodash';
 
-export default (object1, object2) => {
+export default (arg1, arg2) => {
+  const object1 = !arg1 ? {} : arg1;
+  const object2 = !arg2 ? {} : arg2;
+
   const result = [];
 
   const keys1 = Object.keys(object1);
