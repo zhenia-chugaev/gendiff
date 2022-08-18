@@ -27,22 +27,6 @@ let result5;
 let result6;
 
 beforeAll(() => {
-  json1 = { content: readFixture('file1.json'), extension: '.json' };
-  json2 = { content: readFixture('file2.json'), extension: '.json' };
-  json3 = { content: readFixture('file3.json'), extension: '.json' };
-  json4 = { content: readFixture('file4.json'), extension: '.json' };
-  json5 = { content: readFixture('file5.json'), extension: '.json' };
-  json6 = { content: readFixture('file6.json'), extension: '.json' };
-  json7 = { content: '{}', extension: '.json' };
-
-  yaml1 = { content: readFixture('file1.yml'), extension: '.yml' };
-  yaml2 = { content: readFixture('file2.yaml'), extension: '.yaml' };
-  yaml3 = { content: readFixture('file3.yaml'), extension: '.yaml' };
-  yaml4 = { content: readFixture('file4.yml'), extension: '.yml' };
-  yaml5 = { content: readFixture('file5.yml'), extension: '.yml' };
-  yaml6 = { content: readFixture('file6.yml'), extension: '.yml' };
-  yaml7 = { content: '', extension: '.yml' };
-
   result1 = readFixture('result1');
   result2 = readFixture('result2');
   result3 = readFixture('result3');
@@ -52,11 +36,20 @@ beforeAll(() => {
 });
 
 describe('json files testing', () => {
+  beforeAll(() => {
+    json1 = { content: readFixture('file1.json'), extension: '.json' };
+    json2 = { content: readFixture('file2.json'), extension: '.json' };
+    json3 = { content: readFixture('file3.json'), extension: '.json' };
+    json4 = { content: readFixture('file4.json'), extension: '.json' };
+    json5 = { content: readFixture('file5.json'), extension: '.json' };
+    json6 = { content: readFixture('file6.json'), extension: '.json' };
+    json7 = { content: '{}', extension: '.json' };
+  });
+
   test('flat structures', () => {
     expect(process(json1, json2)).toBe(result1);
     expect(process(json2, json2)).toBe(result2);
     expect(process(json2, json1)).toBe(result3);
-    expect(process(json7, json7)).toBe('{}');
   });
 
   test('nested structures', () => {
@@ -64,19 +57,36 @@ describe('json files testing', () => {
     expect(process(json5, json6)).toBe(result5);
     expect(process(json6, json6)).toBe(result6);
   });
+
+  test('special cases', () => {
+    expect(process(json7, json7)).toBe('{}');
+  });
 });
 
 describe('yaml files testing', () => {
+  beforeAll(() => {
+    yaml1 = { content: readFixture('file1.yml'), extension: '.yml' };
+    yaml2 = { content: readFixture('file2.yaml'), extension: '.yaml' };
+    yaml3 = { content: readFixture('file3.yaml'), extension: '.yaml' };
+    yaml4 = { content: readFixture('file4.yml'), extension: '.yml' };
+    yaml5 = { content: readFixture('file5.yml'), extension: '.yml' };
+    yaml6 = { content: readFixture('file6.yml'), extension: '.yml' };
+    yaml7 = { content: '', extension: '.yml' };
+  });
+
   test('flat structures', () => {
     expect(process(yaml1, yaml2)).toBe(result1);
     expect(process(yaml2, yaml2)).toBe(result2);
     expect(process(yaml2, yaml1)).toBe(result3);
-    expect(process(yaml7, yaml7)).toBe('{}');
   });
 
   test('nested structures', () => {
     expect(process(yaml3, yaml4)).toBe(result4);
     expect(process(yaml5, yaml6)).toBe(result5);
     expect(process(yaml6, yaml6)).toBe(result6);
+  });
+
+  test('special cases', () => {
+    expect(process(yaml7, yaml7)).toBe('{}');
   });
 });
