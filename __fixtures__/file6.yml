@@ -1,0 +1,16 @@
+id: 42
+type: string
+keyword: forward
+body: null
+appex:
+  inner:
+    prop:
+      number: 1
+  subjects:
+    url: ''
+    title: default
+    ref:
+      attr: 0
+    key: value
+final:
+  value: true

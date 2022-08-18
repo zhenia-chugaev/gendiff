@@ -1,0 +1,20 @@
+{
+  "id": 42,
+  "type": null,
+  "description": "",
+  "body": {
+    "key": "numeric"
+  },
+  "inter": {},
+  "appex": {
+    "inner": null,
+    "subjects": {
+      "url": "none",
+      "ref": {
+        "attr": 0
+      },
+      "title": "default",
+      "important": false
+    }
+  }
+}

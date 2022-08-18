@@ -1,0 +1,33 @@
+{
+    appex: {
+      - inner: null
+      + inner: {
+            prop: {
+                number: 1
+            }
+        }
+        subjects: {
+          - important: false
+          + key: value
+            ref: {
+                attr: 0
+            }
+            title: default
+          - url: none
+          + url: 
+        }
+    }
+  - body: {
+        key: numeric
+    }
+  + body: null
+  - description: 
+  + final: {
+        value: true
+    }
+    id: 42
+  - inter: {}
+  + keyword: forward
+  - type: null
+  + type: string
+}
