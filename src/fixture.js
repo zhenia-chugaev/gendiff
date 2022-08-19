@@ -1,17 +1,17 @@
 import { fileURLToPath } from 'url';
-import { dirname, resolve } from 'path';
+import { dirname, join } from 'path';
 import { readFileSync } from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const getFixturePath = (fixtureName) => {
-  const relativePath = `../__fixtures__/${fixtureName}`;
-  return resolve(__dirname, relativePath);
+const getAbsolutePath = (fixturePath) => {
+  const path = join(__dirname, '..', '__fixtures__', fixturePath);
+  return path;
 };
 
-const readFixture = (fixtureName) => {
-  const path = getFixturePath(fixtureName);
+const readFixture = (fixturePath) => {
+  const path = getAbsolutePath(fixturePath);
   return readFileSync(path, 'utf8');
 };
 
