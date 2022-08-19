@@ -37,12 +37,12 @@ beforeAll(() => {
 
 describe('json files testing', () => {
   beforeAll(() => {
-    json1 = { content: readFixture('file1.json'), extension: '.json' };
-    json2 = { content: readFixture('file2.json'), extension: '.json' };
-    json3 = { content: readFixture('file3.json'), extension: '.json' };
-    json4 = { content: readFixture('file4.json'), extension: '.json' };
-    json5 = { content: readFixture('file5.json'), extension: '.json' };
-    json6 = { content: readFixture('file6.json'), extension: '.json' };
+    json1 = { content: readFixture('json/file1.json'), extension: '.json' };
+    json2 = { content: readFixture('json/file2.json'), extension: '.json' };
+    json3 = { content: readFixture('json/file3.json'), extension: '.json' };
+    json4 = { content: readFixture('json/file4.json'), extension: '.json' };
+    json5 = { content: readFixture('json/file5.json'), extension: '.json' };
+    json6 = { content: readFixture('json/file6.json'), extension: '.json' };
     json7 = { content: '{}', extension: '.json' };
   });
 
@@ -65,12 +65,12 @@ describe('json files testing', () => {
 
 describe('yaml files testing', () => {
   beforeAll(() => {
-    yaml1 = { content: readFixture('file1.yml'), extension: '.yml' };
-    yaml2 = { content: readFixture('file2.yaml'), extension: '.yaml' };
-    yaml3 = { content: readFixture('file3.yaml'), extension: '.yaml' };
-    yaml4 = { content: readFixture('file4.yml'), extension: '.yml' };
-    yaml5 = { content: readFixture('file5.yml'), extension: '.yml' };
-    yaml6 = { content: readFixture('file6.yml'), extension: '.yml' };
+    yaml1 = { content: readFixture('yaml/file1.yml'), extension: '.yml' };
+    yaml2 = { content: readFixture('yaml/file2.yaml'), extension: '.yaml' };
+    yaml3 = { content: readFixture('yaml/file3.yaml'), extension: '.yaml' };
+    yaml4 = { content: readFixture('yaml/file4.yml'), extension: '.yml' };
+    yaml5 = { content: readFixture('yaml/file5.yml'), extension: '.yml' };
+    yaml6 = { content: readFixture('yaml/file6.yml'), extension: '.yml' };
     yaml7 = { content: '', extension: '.yml' };
   });
 
