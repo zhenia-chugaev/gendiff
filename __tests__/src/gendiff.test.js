@@ -25,6 +25,8 @@ let result3;
 let result4;
 let result5;
 let result6;
+let result7;
+let result8;
 
 beforeAll(() => {
   result1 = readFixture('result1');
@@ -33,6 +35,8 @@ beforeAll(() => {
   result4 = readFixture('result4');
   result5 = readFixture('result5');
   result6 = readFixture('result6');
+  result7 = readFixture('result7');
+  result8 = readFixture('result8');
 });
 
 describe('json files testing', () => {
@@ -58,8 +62,9 @@ describe('json files testing', () => {
     expect(process(json6, json6)).toBe(result6);
   });
 
-  test('special cases', () => {
+  test('empty structures', () => {
     expect(process(json7, json7)).toBe('{}');
+    expect(process(json7, json2)).toBe(result7);
   });
 });
 
@@ -86,7 +91,8 @@ describe('yaml files testing', () => {
     expect(process(yaml6, yaml6)).toBe(result6);
   });
 
-  test('special cases', () => {
+  test('empty structures', () => {
     expect(process(yaml7, yaml7)).toBe('{}');
+    expect(process(yaml5, yaml7)).toBe(result8);
   });
 });
