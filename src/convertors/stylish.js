@@ -2,18 +2,18 @@ import _ from 'lodash';
 
 const INDENT_SIZE = 4;
 
-const stringify = (data, depth) => {
+const stringify = (data, currentDepth) => {
   if (!_.isObject(data)) {
     return String(data);
   }
 
-  const indent = ' '.repeat(INDENT_SIZE * depth);
+  const indent = ' '.repeat(INDENT_SIZE * currentDepth);
 
   const inner = Object.keys(data)
     .map((key) => {
       const value = data[key];
       const string = _.isObject(value)
-        ? stringify(value, depth + 1)
+        ? stringify(value, currentDepth + 1)
         : value;
       const line = `${key}: ${string}`;
       return line.padStart(line.length + INDENT_SIZE, ' ');
@@ -23,13 +23,13 @@ const stringify = (data, depth) => {
   return !inner ? '{}' : `{\n${indent}${inner}\n${indent}}`;
 };
 
-const convert = (keySpecs, depth = 0) => {
+const toStylish = (keySpecs, depth = 0) => {
   const indent = ' '.repeat(INDENT_SIZE * depth);
 
   const inner = keySpecs
     .flatMap((key) => {
       const value = (key.state === 'unsettled')
-        ? convert(key.spec, depth + 1)
+        ? toStylish(key.spec, depth + 1)
         : stringify(key.initialValue, depth + 1);
 
       const line = `${key.name}: ${value}`;
@@ -54,4 +54,4 @@ const convert = (keySpecs, depth = 0) => {
   return !inner ? '{}' : `{\n${indent}${inner}\n${indent}}`;
 };
 
-export default convert;
+export default toStylish;
