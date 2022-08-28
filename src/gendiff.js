@@ -8,9 +8,9 @@ const read = (filepath) => {
   return { extension, content };
 };
 
-export default (filepath1, filepath2) => {
+export default (filepath1, filepath2, format = 'stylish') => {
   const file1 = read(filepath1);
   const file2 = read(filepath2);
-  const result = process(file1, file2);
+  const result = process(file1, file2, format);
   return result;
 };
