@@ -1,4 +1,7 @@
-id: 42
+initial:
+  timeout: 20
+  verbose: true
+  host: domain.io
 type: string
 keyword: forward
 body: null

@@ -1,5 +1,40 @@
 {
-    host: hexlet.io
-    timeout: 20
-    verbose: true
+    appex: {
+      - inner: null
+      + inner: {
+            prop: {
+                number: 1
+            }
+        }
+        subjects: {
+          - important: false
+          + key: value
+            ref: {
+                attr: 0
+            }
+            title: default
+          - url: none
+          + url: 
+        }
+    }
+  - body: {
+        key: numeric
+    }
+  + body: null
+  - description: 
+  + final: {
+        value: true
+    }
+    initial: {
+      - follow: false
+        host: domain.io
+      - proxy: 123.234.53.22
+      - timeout: 50
+      + timeout: 20
+      + verbose: true
+    }
+  - inter: {}
+  + keyword: forward
+  - type: null
+  + type: string
 }

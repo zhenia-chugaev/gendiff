@@ -1,33 +1,25 @@
 {
-    appex: {
-      - inner: null
-      + inner: {
-            prop: {
-                number: 1
-            }
-        }
+  - appex: {
+        inner: null
         subjects: {
-          - important: false
-          + key: value
+            url: none
             ref: {
                 attr: 0
             }
             title: default
-          - url: none
-          + url: 
+            important: false
         }
     }
   - body: {
         key: numeric
     }
-  + body: null
   - description: 
-  + final: {
-        value: true
+  - initial: {
+        host: domain.io
+        timeout: 50
+        proxy: 123.234.53.22
+        follow: false
     }
-    id: 42
   - inter: {}
-  + keyword: forward
   - type: null
-  + type: string
 }
