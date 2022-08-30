@@ -5,7 +5,11 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/6d0d6094b7fd5450c2be/test_coverage)](https://codeclimate.com/github/zhenia-chugaev/gendiff/test_coverage)
 
 ## Description
-The utility compares two config files (json or yaml) and shows the difference (possible formats: stylish (default), plain). If the value of the config key is a complex structure the utility shows the difference recursively.
+The utility compares two config files (json or yaml) and shows the difference (possible formats: stylish (default), plain, json). If the value of the config key is a complex structure the utility shows the difference recursively.
 
 ## Demo
-[![asciicast](https://asciinema.org/a/515427.svg)](https://asciinema.org/a/515427)
+### Stylish format
+[![asciicast](https://asciinema.org/a/517621.svg)](https://asciinema.org/a/517621?cols=242&rows=48)
+
+### Plain format
+[![asciicast](https://asciinema.org/a/517864.svg)](https://asciinema.org/a/517864?cols=220&rows=35)
