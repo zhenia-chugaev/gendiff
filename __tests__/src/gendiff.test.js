@@ -44,7 +44,7 @@ describe('json files testing', () => {
 
   test('stylish format', () => {
     expect(process(json1, json2)).toBe(result1);
-    expect(process(json3, json4)).toBe(result2);
+    expect(process(json3, json4, 'stylish')).toBe(result2);
   });
 
   test('plain format', () => {
@@ -83,6 +83,6 @@ describe('yaml files testing', () => {
   test('comparing with empty structure', () => {
     expect(process(yaml0, yaml0)).toBe('{}');
     expect(process(yaml0, yaml0, 'plain')).toBe('');
-    expect(process(yaml3, yaml0)).toBe(result5);
+    expect(process(yaml3, yaml0, 'stylish')).toBe(result5);
   });
 });
