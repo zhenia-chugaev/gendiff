@@ -20,6 +20,8 @@ let result2;
 let result3;
 let result4;
 let result5;
+let result6;
+let result7;
 
 beforeAll(() => {
   result1 = readFixture('result1');
@@ -27,6 +29,8 @@ beforeAll(() => {
   result3 = readFixture('result3');
   result4 = readFixture('result4');
   result5 = readFixture('result5');
+  result6 = readFixture('result6');
+  result7 = readFixture('result7');
 });
 
 describe('json files testing', () => {
@@ -38,13 +42,20 @@ describe('json files testing', () => {
     json4 = { content: readFixture('json/file4.json'), extension: '.json' };
   });
 
-  test('nested structures', () => {
+  test('stylish format', () => {
     expect(process(json1, json2)).toBe(result1);
     expect(process(json3, json4)).toBe(result2);
   });
 
-  test('empty structures', () => {
+  test('plain format', () => {
+    expect(process(json1, json2, 'plain')).toBe(result6);
+    expect(process(json4, json3, 'plain')).toBe(result7);
+    expect(process(json3, json3, 'plain')).toBe('');
+  });
+
+  test('comparing with empty structure', () => {
     expect(process(json0, json0)).toBe('{}');
+    expect(process(json0, json0, 'plain')).toBe('');
     expect(process(json0, json4)).toBe(result4);
   });
 });
@@ -58,14 +69,20 @@ describe('yaml files testing', () => {
     yaml4 = { content: readFixture('yaml/file4.yaml'), extension: '.yaml' };
   });
 
-  test('nested structures', () => {
+  test('stylish format', () => {
     expect(process(yaml1, yaml2)).toBe(result1);
     expect(process(yaml3, yaml4)).toBe(result2);
     expect(process(yaml4, yaml4)).toBe(result3);
   });
 
-  test('empty structures', () => {
+  test('plain format', () => {
+    expect(process(yaml1, yaml2, 'plain')).toBe(result6);
+    expect(process(yaml4, yaml3, 'plain')).toBe(result7);
+  });
+
+  test('comparing with empty structure', () => {
     expect(process(yaml0, yaml0)).toBe('{}');
+    expect(process(yaml0, yaml0, 'plain')).toBe('');
     expect(process(yaml3, yaml0)).toBe(result5);
   });
 });

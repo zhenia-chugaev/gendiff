@@ -1,0 +1,14 @@
+Property 'appex.inner' was updated. From [complex value] to null
+Property 'appex.subjects.important' was added with value: false
+Property 'appex.subjects.key' was removed
+Property 'appex.subjects.url' was updated. From '' to 'none'
+Property 'body' was updated. From null to [complex value]
+Property 'description' was added with value: ''
+Property 'final' was removed
+Property 'initial.follow' was added with value: false
+Property 'initial.proxy' was added with value: '123.234.53.22'
+Property 'initial.timeout' was updated. From 20 to 50
+Property 'initial.verbose' was removed
+Property 'inter' was added with value: [complex value]
+Property 'keyword' was removed
+Property 'type' was updated. From 'string' to null
