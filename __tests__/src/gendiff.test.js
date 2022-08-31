@@ -16,24 +16,10 @@ let yaml3;
 let yaml4;
 let yaml5;
 
-let result1;
-let result2;
-let result3;
-let result4;
-let result5;
-let result6;
-let result7;
-let result8;
+let results;
 
 beforeAll(() => {
-  result1 = readFixture('result1');
-  result2 = readFixture('result2');
-  result3 = readFixture('result3');
-  result4 = readFixture('result4');
-  result5 = readFixture('result5');
-  result6 = readFixture('result6');
-  result7 = readFixture('result7');
-  result8 = readFixture('result8');
+  results = readFixture('results').split('\n\n\n');
 });
 
 describe('json files testing', () => {
@@ -46,20 +32,20 @@ describe('json files testing', () => {
   });
 
   test('stylish format', () => {
-    expect(process(json1, json2)).toBe(result1);
-    expect(process(json3, json4, 'stylish')).toBe(result2);
+    expect(process(json1, json2)).toBe(results[0]);
+    expect(process(json3, json4, 'stylish')).toBe(results[1]);
   });
 
   test('plain format', () => {
-    expect(process(json1, json2, 'plain')).toBe(result6);
-    expect(process(json4, json3, 'plain')).toBe(result7);
+    expect(process(json1, json2, 'plain')).toBe(results[5]);
+    expect(process(json4, json3, 'plain')).toBe(results[6]);
     expect(process(json3, json3, 'plain')).toBe('');
   });
 
   test('comparing with empty structure', () => {
     expect(process(json0, json0)).toBe('{}');
     expect(process(json0, json0, 'plain')).toBe('');
-    expect(process(json0, json4)).toBe(result4);
+    expect(process(json0, json4)).toBe(results[3]);
   });
 });
 
@@ -74,23 +60,23 @@ describe('yaml files testing', () => {
   });
 
   test('stylish format', () => {
-    expect(process(yaml1, yaml2)).toBe(result1);
-    expect(process(yaml3, yaml4)).toBe(result2);
-    expect(process(yaml4, yaml4)).toBe(result3);
+    expect(process(yaml1, yaml2)).toBe(results[0]);
+    expect(process(yaml3, yaml4)).toBe(results[1]);
+    expect(process(yaml4, yaml4)).toBe(results[2]);
   });
 
   test('plain format', () => {
-    expect(process(yaml1, yaml2, 'plain')).toBe(result6);
-    expect(process(yaml4, yaml3, 'plain')).toBe(result7);
+    expect(process(yaml1, yaml2, 'plain')).toBe(results[5]);
+    expect(process(yaml4, yaml3, 'plain')).toBe(results[6]);
   });
 
   test('json format', () => {
-    expect(process(yaml0, yaml5, 'json')).toBe(result8);
+    expect(process(yaml0, yaml5, 'json')).toBe(results[7]);
   });
 
   test('comparing with empty structure', () => {
     expect(process(yaml0, yaml0)).toBe('{}');
     expect(process(yaml0, yaml0, 'plain')).toBe('');
-    expect(process(yaml3, yaml0, 'stylish')).toBe(result5);
+    expect(process(yaml3, yaml0, 'stylish')).toBe(results[4]);
   });
 });
