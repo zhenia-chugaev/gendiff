@@ -14,6 +14,7 @@ let yaml1;
 let yaml2;
 let yaml3;
 let yaml4;
+let yaml5;
 
 let result1;
 let result2;
@@ -22,6 +23,7 @@ let result4;
 let result5;
 let result6;
 let result7;
+let result8;
 
 beforeAll(() => {
   result1 = readFixture('result1');
@@ -31,6 +33,7 @@ beforeAll(() => {
   result5 = readFixture('result5');
   result6 = readFixture('result6');
   result7 = readFixture('result7');
+  result8 = readFixture('result8');
 });
 
 describe('json files testing', () => {
@@ -67,6 +70,7 @@ describe('yaml files testing', () => {
     yaml2 = { content: readFixture('yaml/file2.yml'), extension: '.yml' };
     yaml3 = { content: readFixture('yaml/file3.yml'), extension: '.yml' };
     yaml4 = { content: readFixture('yaml/file4.yaml'), extension: '.yaml' };
+    yaml5 = { content: 'a: 1', extension: '.yaml' };
   });
 
   test('stylish format', () => {
@@ -78,6 +82,10 @@ describe('yaml files testing', () => {
   test('plain format', () => {
     expect(process(yaml1, yaml2, 'plain')).toBe(result6);
     expect(process(yaml4, yaml3, 'plain')).toBe(result7);
+  });
+
+  test('json format', () => {
+    expect(process(yaml0, yaml5, 'json')).toBe(result8);
   });
 
   test('comparing with empty structure', () => {
