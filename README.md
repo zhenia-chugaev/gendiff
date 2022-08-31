@@ -1,4 +1,4 @@
-### Hexlet tests and linter status:
+### Tests and linter status:
 [![node CI](https://github.com/zhenia-chugaev/gendiff/actions/workflows/node-ci.yml/badge.svg)](https://github.com/zhenia-chugaev/gendiff/actions/workflows/node-ci.yml)
 [![Actions Status](https://github.com/anorone/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/anorone/frontend-project-lvl2/actions/workflows/hexlet-check.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/6d0d6094b7fd5450c2be/maintainability)](https://codeclimate.com/github/zhenia-chugaev/gendiff/maintainability)
