@@ -8,8 +8,12 @@
 The utility compares two config files (json or yaml) and shows the difference (possible formats: stylish (default), plain, json). If the value of the config key is a complex structure the utility shows the difference recursively.
 
 ## Demo
-### Stylish format
+### Format
+#### stylish
 [![asciicast](https://asciinema.org/a/517621.svg)](https://asciinema.org/a/517621?cols=242&rows=48)
 
-### Plain format
+#### plain
 [![asciicast](https://asciinema.org/a/517864.svg)](https://asciinema.org/a/517864?cols=220&rows=35)
+
+#### json
+[![asciicast](https://asciinema.org/a/518106.svg)](https://asciinema.org/a/518106)
