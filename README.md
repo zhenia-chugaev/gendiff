@@ -30,3 +30,9 @@ From now on there will be `gendiff` command available in the global scope.
 # Run to see the help page
 $ gendiff -h
 ```
+
+## Uninstallation
+The package installation using instructions above links the package to the global scope of your computer just like `npm link` command does. To remove it totally you can run the following:
+```shell
+$ make uninstall
+```
