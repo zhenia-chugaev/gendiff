@@ -8,7 +8,7 @@
 The utility compares two config files (json or yaml) and shows the difference (possible formats: stylish (default), plain, json). If the value of the config key is a complex structure the utility shows the difference recursively.
 
 ## Demo
-### Format
+### Formats
 #### stylish
 [![asciicast](https://asciinema.org/a/517621.svg)](https://asciinema.org/a/517621?cols=242&rows=48)
 
@@ -17,3 +17,16 @@ The utility compares two config files (json or yaml) and shows the difference (p
 
 #### json
 [![asciicast](https://asciinema.org/a/518106.svg)](https://asciinema.org/a/518106)
+
+## Installation & Usage
+Clone the repo.  
+Run commands:
+```shell
+$ cd <project folder>
+$ make install
+```
+From now on there will be `gendiff` command available in the global scope.
+```shell
+# Run to see the help page
+$ gendiff -h
+```
