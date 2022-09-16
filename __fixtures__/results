@@ -202,4 +202,4 @@ Property 'keyword' was removed
 Property 'type' was updated. From 'string' to null
 
 
-[{"name":"a","state":"added","initialValue":1,"finalValue":null,"spec":null}]
+[{"name":"a","initialValue":1,"state":"added","finalValue":null,"spec":null}]

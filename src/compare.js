@@ -2,8 +2,8 @@ import _ from 'lodash';
 
 const makeSpecification = (key, value) => ({
   name: key,
-  state: 'unsettled',
   initialValue: value,
+  state: 'unsettled',
   finalValue: null,
   spec: null,
 });
