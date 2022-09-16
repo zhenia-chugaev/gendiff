@@ -1,5 +1,3 @@
-/* eslint-env jest */
-
 import readFixture from '../../src/fixture.js';
 import process from '../../src/process.js';
 
