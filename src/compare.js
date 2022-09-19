@@ -43,8 +43,7 @@ const compare = (arg1, arg2) => {
     return assign(spec, { state: 'added' });
   });
 
-  const result = specs1.concat(specs2);
-  return _.sortBy(result, 'name');
+  return _.sortBy(_.concat(specs1, specs2), 'name');
 };
 
 export default compare;
