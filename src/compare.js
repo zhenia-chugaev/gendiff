@@ -30,11 +30,11 @@ const compare = (arg1, arg2) => {
     if (_.isObject(value1) && _.isObject(value2)) {
       return assign(spec, { spec: compare(value1, value2) });
     }
-    if (value1 === value2) {
-      return assign(spec, { state: 'unchanged' });
+    if (value1 !== value2) {
+      return assign(spec, { state: 'changed', finalValue: value2 });
     }
 
-    return assign(spec, { state: 'changed', finalValue: value2 });
+    return assign(spec, { state: 'unchanged' });
   });
 
   const added = _.difference(keys2, keys1);
